@@ -14,9 +14,12 @@ namespace SecondHand.Models
 
         [Index(IsUnique=true)]
         [MinLength(5)]
+        [Required(ErrorMessage = "O nome de login é obrigatório!", AllowEmptyStrings = false)]
         public string Login { get; set; }
 
         // criptografia
+        [Required(ErrorMessage = "O nome de login é obrigatório!", AllowEmptyStrings = false)]
+        [MinLength(4)]
         public string Senha { get; set; }
 
 

@@ -28,7 +28,7 @@ namespace SecondHand.Models
         [Required(ErrorMessage = "Identificador obrigatório!")]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Questionamento obrigatório!")]
+        [Required(ErrorMessage = "Questionamento obrigatório!", AllowEmptyStrings = false)]
         [MinLength(5), MaxLength(500)]
         public string Comentario { get; set; }
 

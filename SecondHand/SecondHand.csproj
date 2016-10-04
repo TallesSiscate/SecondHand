@@ -137,7 +137,6 @@
     </Compile>
     <Compile Include="Models\Arquivo.cs" />
     <Compile Include="Models\Categoria.cs" />
-    <Compile Include="Models\CategoriaProduto.cs" />
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\Questionamento.cs" />
     <Compile Include="Models\Usuario.cs" />

@@ -38,7 +38,7 @@ namespace SecondHand.Models
         [Required(ErrorMessage = "Identificador obrigatório!")]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Nome do produto obrigatório!")]
+        [Required(ErrorMessage = "Nome do produto obrigatório!", AllowEmptyStrings = false)]
         [StringLength(100, ErrorMessage = "Nome pode ter no máximo 100 caracteres")]
         public string Nome { get; set; }
 
@@ -55,15 +55,13 @@ namespace SecondHand.Models
             get { return this.Nome + this.Id.ToString(); }
         }
 
-        [Required(ErrorMessage = "Código do anunciante obrigatório!")]
+        [Required(ErrorMessage = "Código do anunciante obrigatório!", AllowEmptyStrings = false)]
         public int UsuarioId { get; set; }
 
 
         public virtual ICollection<Arquivo> Arquivos { get; set; }
         public ICollection<Questionamento> Questionamentos { get; set; }
         public ICollection<Categoria> Categorias { get; set; }
-
-        
 
     }
 }
