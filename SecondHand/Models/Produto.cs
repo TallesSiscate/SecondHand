@@ -24,10 +24,11 @@ namespace SecondHand.Models
         /// <param name="DataCadastro">Data em que o item foi cadastrado</param>
         /// <param name="Situacao">Indicador (lógico) da situação do item no sistema.</param>
         public Produto(int Id,
-                       DateTime DataCadastro)
+                       DateTime DataCadastro, Usuario Usuario)
         {
             this.Id = Id;
             this.DataCadastro = DataCadastro;
+            this.Usuario = Usuario;
             this.Situacao = 2;
         }
 
@@ -69,7 +70,7 @@ namespace SecondHand.Models
         }
 
         [Required(ErrorMessage = "Código do anunciante obrigatório!", AllowEmptyStrings = false)]
-        public int UsuarioId { get; set; }
+        public Usuario Usuario { get; set; }
 
 
         public virtual ICollection<Arquivo> Arquivos { get; set; }
