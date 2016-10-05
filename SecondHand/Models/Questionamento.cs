@@ -28,6 +28,8 @@ namespace SecondHand.Models
         [Required(ErrorMessage = "Identificador obrigatório!")]
         public int Id { get; set; }
 
+        public int? IdPai { get; set; }
+
         [Required(ErrorMessage = "Questionamento obrigatório!", AllowEmptyStrings = false)]
         [MinLength(5), MaxLength(500)]
         public string Comentario { get; set; }
@@ -35,8 +37,7 @@ namespace SecondHand.Models
         // MODIFICAR PARA DATETIME.NOW
         [Required(ErrorMessage = "Data do comentário é obrigatória!")]
         [Display(Name = "Data do Comentário")]
-        public DateTime? DataComentario { get; set; }
-
+        public DateTime DataComentario { get; set; }
 
         // VERIFICAR COMO EXIBIR O NOME DO USUÁRIO NA VIEW
         public int UsuarioId { get; set; }
@@ -46,6 +47,10 @@ namespace SecondHand.Models
         public int ProdutoId { get; set; }
         [ForeignKey("ProdutoId")]
         public Produto Produto { get; set; }
+
+
+
+        //public ICollection<Questionamento> Respostas { get; set; }
 
         #endregion
     }
